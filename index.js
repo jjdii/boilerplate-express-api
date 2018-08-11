@@ -27,7 +27,6 @@ app.get('/test', (req, res, next) => {
   return res.status(200).send('success')
 })
 
-
 ///////////////
 ///// GET /////
 app.get('/test/:id', (req, res, next) => {

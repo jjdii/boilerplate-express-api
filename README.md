@@ -23,7 +23,7 @@ PORT=3000
 ```
 
 ## Running the API
-Run the following code to initialize the API. The server will automatically restart when any changes are made to the code.
+Run the following command to initialize the API. The server will automatically restart when any changes are made to the code.
 ```
 $ npm start
 ```
