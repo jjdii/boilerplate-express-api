@@ -16,7 +16,7 @@ app.post('/test', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
   if (R.isEmpty(body) || body === null)
-    return next(new HTTPError(400, `Missing request body`))
+    return next(new HTTPError(400, `missing request body`))
   
   return res.status(200).send('success')
 })
@@ -40,7 +40,7 @@ app.put('/test/:id', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
   if (R.isEmpty(body) || body === null)
-    return next(new HTTPError(400, `Missing request body`))
+    return next(new HTTPError(400, `missing request body`))
 
   return res.status(200).send('success')
 })
@@ -54,7 +54,7 @@ app.delete('/test/:id', (req, res, next) => {
 /////////////////////////
 ///// ERROR HANDLER /////
 app.use((err, req, res, next) => {
-  console.log(req.method, ' ', req.path, ' ', 'error ', err)
+  console.log(req.method, '::', req.path, '::', 'error', err)
   res.status(err.status || 500).send(err)
 })
 
