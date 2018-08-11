@@ -1,29 +1,29 @@
 {
-  "name": "library-api",
+  "name": "boilerplate-express-api",
   "version": "1.0.0",
-  "description": "An api to manage books and their authors.",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jjdii/library-api.git"
+    "url": "git+https://github.com/jjdii/boilerplate-express-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jjdii/library-api/issues"
+    "url": "https://github.com/jjdii/boilerplate-express-api/issues"
   },
-  "homepage": "https://github.com/jjdii/library-api#readme",
+  "homepage": "https://github.com/jjdii/boilerplate-express-api#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.1",
     "node-http-error": "^2.0.0",
-    "pouchdb": "^6.3.4",
+    "nodemon": "^1.18.3",
     "ramda": "^0.24.1"
   }
 }
