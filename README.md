@@ -2,7 +2,7 @@
 Empty node express REST API project for when you need a quick base to build on.
 
 ## Getting Started
-If you have rights to this repository, simply clone it to your local machine. Otherwise, fork the repository on Github and then clone it.
+If you have rights to this repository, simply clone it to your local machine. Otherwise, fork the repository on Github and then clone it. Install npm dependencies once the project is on your machine.
 ```
 $ git clone https://github.com/jjdii/boilerplate-express-api.git
 $ cd boilerplate-express-api
