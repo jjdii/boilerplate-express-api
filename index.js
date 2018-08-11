@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const HTTPError = require('node-http-error')
@@ -8,8 +10,8 @@ const app = express()
 
 app.use(bodyParser.json())
 
-////////////////
-///// POST /////
+//////////////////
+///// CREATE /////
 app.post('/test', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
@@ -32,8 +34,8 @@ app.get('/test/:id', (req, res, next) => {
   return res.status(200).send('success')
 })
 
-///////////////
-///// PUT /////
+//////////////////
+///// UPDATE /////
 app.put('/test/:id', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
@@ -48,7 +50,6 @@ app.put('/test/:id', (req, res, next) => {
 app.delete('/test/:id', (req, res, next) => {
   return res.status(200).send('success')
 })
-
 
 /////////////////////////
 ///// ERROR HANDLER /////
