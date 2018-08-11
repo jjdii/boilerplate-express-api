@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 
 ////////////////
 ///// POST /////
-app.post('/x', (req, res, next) => {
+app.post('/test', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
   if (R.isEmpty(body) || body === null)
@@ -19,13 +19,22 @@ app.post('/x', (req, res, next) => {
   return res.status(200).send('success')
 })
 
+////////////////
+///// LIST /////
+app.get('/test', (req, res, next) => {
+  return res.status(200).send('success')
+})
+
+
 ///////////////
 ///// GET /////
-app.get('/x/:id', (req, res, next) => {})
+app.get('/test/:id', (req, res, next) => {
+  return res.status(200).send('success')
+})
 
 ///////////////
 ///// PUT /////
-app.put('/x/:id', (req, res, next) => {
+app.put('/test/:id', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
 
   if (R.isEmpty(body) || body === null)
@@ -36,7 +45,9 @@ app.put('/x/:id', (req, res, next) => {
 
 //////////////////
 ///// DELETE /////
-app.delete('/x/:id', (req, res, next) => {})
+app.delete('/test/:id', (req, res, next) => {
+  return res.status(200).send('success')
+})
 
 
 /////////////////////////
