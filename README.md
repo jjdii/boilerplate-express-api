@@ -10,7 +10,7 @@ $ npm install
 ```
 
 ### Environment Variables
-You'll need to create a local **.env** file to store your application's secrets.
+You'll need to create a local **.env** file at the root directory to store your application's secrets.
 
 Create a `PORT` variable within your **.env** file.
 
