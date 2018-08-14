@@ -22,7 +22,7 @@ Create a `PORT` variable within your **.env** file.
 PORT=3000
 ```
 
-If connecting to a MySQL database, add the necessary credentials to your **.env** file.
+If connecting to a MySQL database, add your host url, username, password and database as `DB_HOST`, `DB_USER`, `DB_PASS` and `DB_NAME` respectively to your **.env** file.
 
 **Example:**
 ```
