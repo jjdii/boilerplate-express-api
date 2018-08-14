@@ -15,16 +15,15 @@ const app = express()
 app.use(bodyParser.json())
 
 var table = 'resources'
+var requiredFields = ['name']
+var allowedFields = ['name', 'description']
 
 //////////////////
 ///// CREATE /////
 app.post(`/${table}`, (req, res, next) => {
-  const requiredFields = ['name']
-  const allowedFields = ['name', 'description']
   const body = R.propOr(null, 'body', req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  //console.log('debug:', debug)
   if (debug) console.log('body', body)
 
   // CHECK IF BODY EXISTS
@@ -83,7 +82,6 @@ app.get(`/${table}/:id`, (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  //console.log('debug:', debug)
   if (debug) console.log('id', id)
 
   // OPEN DB CONNECTION
@@ -161,7 +159,6 @@ app.get(`/${table}`, (req, res, next) => {
 //////////////////
 ///// UPDATE /////
 app.put(`/${table}/:id`, (req, res, next) => {
-  const allowedFields = ['name', 'description']
   const body = R.propOr(null, 'body', req)
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
