@@ -22,7 +22,7 @@ app.post('/resources', (req, res, next) => {
   const body = R.propOr(null, 'body', req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  console.log('debug:', debug)
+  //console.log('debug:', debug)
   if (debug) console.log('body', body)
 
   // CHECK IF BODY EXISTS
@@ -81,7 +81,7 @@ app.get('/resources/:id', (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  console.log('debug:', debug)
+  //console.log('debug:', debug)
   if (debug) console.log('id', id)
 
   // OPEN DB CONNECTION
@@ -122,7 +122,7 @@ app.get('/resources/:id', (req, res, next) => {
 app.get('/resources', (req, res, next) => {
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  console.log('debug:', debug)
+  //console.log('debug:', debug)
 
   // OPEN DB CONNECTION
   var connection
@@ -164,7 +164,7 @@ app.put('/resources/:id', (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  console.log('debug:', debug)
+  //console.log('debug:', debug)
   if (debug) console.log('body', body)
   if (debug) console.log('id', id)
 
@@ -219,7 +219,7 @@ app.delete('/resources/:id', (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  console.log('debug:', debug)
+  //console.log('debug:', debug)
   if (debug) console.log('id', id)
 
   // OPEN DB CONNECTION
