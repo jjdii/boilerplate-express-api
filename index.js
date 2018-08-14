@@ -14,9 +14,11 @@ const app = express()
 
 app.use(bodyParser.json())
 
+var table = 'resources'
+
 //////////////////
 ///// CREATE /////
-app.post('/resources', (req, res, next) => {
+app.post(`/${table}`, (req, res, next) => {
   const requiredFields = ['name']
   const allowedFields = ['name', 'description']
   const body = R.propOr(null, 'body', req)
@@ -49,7 +51,7 @@ app.post('/resources', (req, res, next) => {
   }).then(conn => {
     // QUERY
     connection = conn
-    var query = buildQuery.insert('resources', cleanBody)
+    var query = buildQuery.insert(table, cleanBody)
     if (debug) console.log('query', query)
 
     return connection.query(query, buildQuery.escapeValues(cleanBody))
@@ -60,7 +62,7 @@ app.post('/resources', (req, res, next) => {
     if (debug) console.log('result', result)
 
     return res.status(200).send({
-      message: 'create resource success',
+      message: `create ${table} success`,
       id: R.propOr(null, 'insertId', result),
       data: result
     })
@@ -77,7 +79,7 @@ app.post('/resources', (req, res, next) => {
 
 ///////////////
 ///// GET /////
-app.get('/resources/:id', (req, res, next) => {
+app.get(`/${table}/:id`, (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
@@ -91,7 +93,7 @@ app.get('/resources/:id', (req, res, next) => {
   }).then(conn => {
     // QUERY
     connection = conn
-    var query = buildQuery.get('resources', ['id', 'name', 'description', 'created'], {id: id})
+    var query = buildQuery.get(table, ['id', 'name', 'description', 'created'], {id: id})
     if (debug) console.log('query', query)
 
     return connection.query(query, [id])
@@ -102,7 +104,7 @@ app.get('/resources/:id', (req, res, next) => {
     if (debug) console.log('result', result)
 
     return res.status(200).send({
-      message: 'get resource success',
+      message: `get ${table} success`,
       id: id,
       data: (result.isArray && result.length > 1) ? result : R.propOr(null, 0, result)
     })
@@ -119,7 +121,7 @@ app.get('/resources/:id', (req, res, next) => {
 
 ////////////////
 ///// LIST /////
-app.get('/resources', (req, res, next) => {
+app.get(`/${table}`, (req, res, next) => {
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
   //console.log('debug:', debug)
@@ -131,7 +133,7 @@ app.get('/resources', (req, res, next) => {
   }).then(conn => {
     // QUERY
     connection = conn
-    var query = buildQuery.list('resources', ['id', 'name', 'description', 'created'])
+    var query = buildQuery.list(table, ['id', 'name', 'description', 'created'])
     if (debug) console.log('query', query)
 
     return connection.query(query)
@@ -142,7 +144,7 @@ app.get('/resources', (req, res, next) => {
     if (debug) console.log('result', result)
 
     return res.status(200).send({
-      message: 'list resources success',
+      message: `list ${table} success`,
       data: result
     })
   
@@ -158,7 +160,7 @@ app.get('/resources', (req, res, next) => {
 
 //////////////////
 ///// UPDATE /////
-app.put('/resources/:id', (req, res, next) => {
+app.put(`/${table}/:id`, (req, res, next) => {
   const allowedFields = ['name', 'description']
   const body = R.propOr(null, 'body', req)
   const id = R.pathOr(null, ['params', 'id'], req)
@@ -187,7 +189,7 @@ app.put('/resources/:id', (req, res, next) => {
   }).then(conn => {
     // QUERY
     connection = conn
-    var query = buildQuery.update('resources', cleanBody, {id: id})
+    var query = buildQuery.update(table, cleanBody, {id: id})
     if (debug) console.log('query', query)
 
     return connection.query(query, buildQuery.escapeValues(cleanBody))
@@ -198,7 +200,7 @@ app.put('/resources/:id', (req, res, next) => {
     if (debug) console.log('result', result)
 
     return res.status(200).send({
-      message: 'update resource success',
+      message: `update ${table} success`,
       id: id,
       data: result
     })
@@ -215,7 +217,7 @@ app.put('/resources/:id', (req, res, next) => {
 
 //////////////////
 ///// DELETE /////
-app.delete('/resources/:id', (req, res, next) => {
+app.delete(`/${table}/:id`, (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
@@ -229,7 +231,7 @@ app.delete('/resources/:id', (req, res, next) => {
   }).then(conn => {
     // QUERY
     connection = conn
-    var query = buildQuery.delete('resources', {id: id})
+    var query = buildQuery.delete(table, {id: id})
     if (debug) console.log('query', query)
 
     return connection.query(query, [id])
@@ -240,7 +242,7 @@ app.delete('/resources/:id', (req, res, next) => {
     if (debug) console.log('result', result)
 
     return res.status(200).send({
-      message: 'delete resource success',
+      message: `delete ${table} success`,
       id: R.propOr(null, 'insertId', result),
       data: result
     })
