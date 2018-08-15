@@ -1,5 +1,5 @@
 # Boilerplate Express API
-Empty node express REST API project with MySQL integration for when you need a quick base to build on.
+Basic node express REST API project with MySQL integration for when you need a quick base to build on.
 
 ## Getting Started
 If you have rights to this repository, simply clone it to your local machine. Otherwise, fork the repository on Github and then clone it. Install npm dependencies once the project is on your machine.
