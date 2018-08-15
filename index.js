@@ -122,8 +122,6 @@ app.get(`/${table}/:id`, (req, res, next) => {
 app.get(`/${table}`, (req, res, next) => {
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  //console.log('debug:', debug)
-
   // OPEN DB CONNECTION
   var connection
   createConnection({
@@ -163,7 +161,6 @@ app.put(`/${table}/:id`, (req, res, next) => {
   const id = R.pathOr(null, ['params', 'id'], req)
   const debug = R.pathOr(null, ['query', 'debug'], req) == 'true'
 
-  //console.log('debug:', debug)
   if (debug) console.log('body', body)
   if (debug) console.log('id', id)
 
