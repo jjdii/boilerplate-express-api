@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Create Resource",
+			"name": "Create example",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -20,14 +20,14 @@
 					"raw": "{\n\t\"name\": \"tester\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 				},
 				"url": {
-					"raw": "http://localhost:6660/resources?debug=true",
+					"raw": "http://localhost:6660/example?debug=true",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "6660",
 					"path": [
-						"resources"
+						"example"
 					],
 					"query": [
 						{
@@ -39,7 +39,7 @@
 			},
 			"response": [
 				{
-					"name": "Create Resource",
+					"name": "Create example",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
@@ -54,14 +54,14 @@
 							"raw": "{\n\t\"name\": \"tester\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 						},
 						"url": {
-							"raw": "http://localhost:6660/resources?debug=true",
+							"raw": "http://localhost:6660/example?debug=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "6660",
 							"path": [
-								"resources"
+								"example"
 							],
 							"query": [
 								{
@@ -113,12 +113,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\"message\":\"create resources success\",\"id\":16,\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":16,\"serverStatus\":2,\"warningCount\":0,\"message\":\"\",\"protocol41\":true,\"changedRows\":0}}"
+					"body": "{\"message\":\"create example success\",\"id\":16,\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":16,\"serverStatus\":2,\"warningCount\":0,\"message\":\"\",\"protocol41\":true,\"changedRows\":0}}"
 				}
 			]
 		},
 		{
-			"name": "Get Resource By ID",
+			"name": "Get example By ID",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -127,14 +127,14 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 				},
 				"url": {
-					"raw": "http://localhost:6660/resources/16?debug=true",
+					"raw": "http://localhost:6660/example/16?debug=true",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "6660",
 					"path": [
-						"resources",
+						"example",
 						"16"
 					],
 					"query": [
@@ -147,7 +147,7 @@
 			},
 			"response": [
 				{
-					"name": "Get Resource By ID",
+					"name": "Get example By ID",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -156,14 +156,14 @@
 							"raw": "{\n\t\"name\": \"test\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 						},
 						"url": {
-							"raw": "http://localhost:6660/resources/16?debug=true",
+							"raw": "http://localhost:6660/example/16?debug=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "6660",
 							"path": [
-								"resources",
+								"example",
 								"16"
 							],
 							"query": [
@@ -216,12 +216,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\"message\":\"get resources success\",\"id\":\"16\",\"data\":{\"id\":16,\"name\":\"tester\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T09:55:30.000Z\"}}"
+					"body": "{\"message\":\"get example success\",\"id\":\"16\",\"data\":{\"id\":16,\"name\":\"tester\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T09:55:30.000Z\"}}"
 				}
 			]
 		},
 		{
-			"name": "List Resources",
+			"name": "List example",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -230,14 +230,14 @@
 					"raw": "{\n\t\"name\": \"test\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 				},
 				"url": {
-					"raw": "http://localhost:6660/resources?debug=true",
+					"raw": "http://localhost:6660/example?debug=true",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "6660",
 					"path": [
-						"resources"
+						"example"
 					],
 					"query": [
 						{
@@ -249,7 +249,7 @@
 			},
 			"response": [
 				{
-					"name": "List Resources",
+					"name": "List example",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -258,14 +258,14 @@
 							"raw": "{\n\t\"name\": \"test\",\n\t\"description\": \"this is not a drill\",\n\t\"test\": true\n}"
 						},
 						"url": {
-							"raw": "http://localhost:6660/resources?debug=true",
+							"raw": "http://localhost:6660/example?debug=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "6660",
 							"path": [
-								"resources"
+								"example"
 							],
 							"query": [
 								{
@@ -317,12 +317,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\"message\":\"list resources success\",\"data\":[{\"id\":1,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:36:10.000Z\"},{\"id\":2,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:29.000Z\"},{\"id\":3,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:39.000Z\"},{\"id\":4,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:43.000Z\"},{\"id\":5,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:01.000Z\"},{\"id\":6,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:34.000Z\"},{\"id\":7,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:59.000Z\"},{\"id\":8,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:40:04.000Z\"},{\"id\":9,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:44:19.000Z\"},{\"id\":10,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:44:24.000Z\"},{\"id\":11,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:46:39.000Z\"},{\"id\":12,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:52:12.000Z\"},{\"id\":13,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:56:40.000Z\"},{\"id\":14,\"name\":\"testy\",\"description\":\"this is actually a drill\",\"created\":\"2018-08-14T07:57:03.000Z\"},{\"id\":16,\"name\":\"tester\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T09:55:30.000Z\"}]}"
+					"body": "{\"message\":\"list example success\",\"data\":[{\"id\":1,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:36:10.000Z\"},{\"id\":2,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:29.000Z\"},{\"id\":3,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:39.000Z\"},{\"id\":4,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:38:43.000Z\"},{\"id\":5,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:01.000Z\"},{\"id\":6,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:34.000Z\"},{\"id\":7,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:39:59.000Z\"},{\"id\":8,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:40:04.000Z\"},{\"id\":9,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:44:19.000Z\"},{\"id\":10,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:44:24.000Z\"},{\"id\":11,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:46:39.000Z\"},{\"id\":12,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:52:12.000Z\"},{\"id\":13,\"name\":\"test\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T07:56:40.000Z\"},{\"id\":14,\"name\":\"testy\",\"description\":\"this is actually a drill\",\"created\":\"2018-08-14T07:57:03.000Z\"},{\"id\":16,\"name\":\"tester\",\"description\":\"this is not a drill\",\"created\":\"2018-08-14T09:55:30.000Z\"}]}"
 				}
 			]
 		},
 		{
-			"name": "Update Resource",
+			"name": "Update example",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -336,14 +336,14 @@
 					"raw": "{\n\t\"name\": \"testy\",\n\t\"description\": \"this is actually a drill\",\n\t\"test\": true\n}"
 				},
 				"url": {
-					"raw": "http://localhost:6660/resources/16?debug=true",
+					"raw": "http://localhost:6660/example/16?debug=true",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "6660",
 					"path": [
-						"resources",
+						"example",
 						"16"
 					],
 					"query": [
@@ -356,7 +356,7 @@
 			},
 			"response": [
 				{
-					"name": "Update Resource",
+					"name": "Update example",
 					"originalRequest": {
 						"method": "PUT",
 						"header": [
@@ -372,14 +372,14 @@
 							"raw": "{\n\t\"name\": \"testy\",\n\t\"description\": \"this is actually a drill\",\n\t\"test\": true\n}"
 						},
 						"url": {
-							"raw": "http://localhost:6660/resources/16?debug=true",
+							"raw": "http://localhost:6660/example/16?debug=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "6660",
 							"path": [
-								"resources",
+								"example",
 								"16"
 							],
 							"query": [
@@ -432,12 +432,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\"message\":\"update resources success\",\"id\":\"16\",\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":0,\"serverStatus\":2,\"warningCount\":0,\"message\":\"(Rows matched: 1  Changed: 1  Warnings: 0\",\"protocol41\":true,\"changedRows\":1}}"
+					"body": "{\"message\":\"update example success\",\"id\":\"16\",\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":0,\"serverStatus\":2,\"warningCount\":0,\"message\":\"(Rows matched: 1  Changed: 1  Warnings: 0\",\"protocol41\":true,\"changedRows\":1}}"
 				}
 			]
 		},
 		{
-			"name": "Delete Resource",
+			"name": "Delete example",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -446,14 +446,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:6660/resources/11?debug=true",
+					"raw": "http://localhost:6660/example/11?debug=true",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "6660",
 					"path": [
-						"resources",
+						"example",
 						"11"
 					],
 					"query": [
@@ -466,7 +466,7 @@
 			},
 			"response": [
 				{
-					"name": "Delete Resource",
+					"name": "Delete example",
 					"originalRequest": {
 						"method": "DELETE",
 						"header": [],
@@ -475,14 +475,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:6660/resources/11?debug=true",
+							"raw": "http://localhost:6660/example/11?debug=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "6660",
 							"path": [
-								"resources",
+								"example",
 								"11"
 							],
 							"query": [
@@ -535,7 +535,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\"message\":\"delete resources success\",\"id\":0,\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":0,\"serverStatus\":2,\"warningCount\":0,\"message\":\"\",\"protocol41\":true,\"changedRows\":0}}"
+					"body": "{\"message\":\"delete example success\",\"id\":0,\"data\":{\"fieldCount\":0,\"affectedRows\":1,\"insertId\":0,\"serverStatus\":2,\"warningCount\":0,\"message\":\"\",\"protocol41\":true,\"changedRows\":0}}"
 				}
 			]
 		}

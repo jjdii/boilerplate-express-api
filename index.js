@@ -5,6 +5,12 @@ const bodyParser = require('body-parser')
 const HTTPError = require('node-http-error')
 const R = require('ramda')
 const { createConnection } = require('promise-mysql')
+const mysqlConnection = {
+	host: process.env.DB_HOST, 
+	user: process.env.DB_USER, 
+	password: process.env.DB_PASS, 
+	database: process.env.DB_NAME 
+}
 const cleanObject = require('./lib/clean-object')
 const checkFields = require('./lib/check-fields')
 const buildQuery = require('./lib/build-query')
@@ -14,7 +20,7 @@ const app = express()
 
 app.use(bodyParser.json())
 
-var table = 'resources'
+var table = 'example'
 var requiredFields = ['name']
 var allowedFields = ['name', 'description']
 
@@ -45,9 +51,7 @@ app.post(`/${table}`, (req, res, next) => {
 
   // OPEN DB CONNECTION
   var connection
-  createConnection({
-    host: process.env.DB_HOST, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME 
-  }).then(conn => {
+  createConnection(mysqlConnection).then(conn => {
     // QUERY
     connection = conn
     var query = buildQuery.insert(table, cleanBody)
@@ -86,9 +90,7 @@ app.get(`/${table}/:id`, (req, res, next) => {
 
   // OPEN DB CONNECTION
   var connection
-  createConnection({
-    host: process.env.DB_HOST, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME 
-  }).then(conn => {
+  createConnection(mysqlConnection).then(conn => {
     // QUERY
     connection = conn
     var query = buildQuery.get(table, ['id', 'name', 'description', 'created'], {id: id})
@@ -124,9 +126,7 @@ app.get(`/${table}`, (req, res, next) => {
 
   // OPEN DB CONNECTION
   var connection
-  createConnection({
-    host: process.env.DB_HOST, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME
-  }).then(conn => {
+  createConnection(mysqlConnection).then(conn => {
     // QUERY
     connection = conn
     var query = buildQuery.list(table, ['id', 'name', 'description', 'created'])
@@ -178,9 +178,7 @@ app.put(`/${table}/:id`, (req, res, next) => {
 
   // OPEN DB CONNECTION
   var connection
-  createConnection({
-    host: process.env.DB_HOST, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME
-  }).then(conn => {
+  createConnection(mysqlConnection).then(conn => {
     // QUERY
     connection = conn
     var query = buildQuery.update(table, cleanBody, {id: id})
@@ -220,9 +218,7 @@ app.delete(`/${table}/:id`, (req, res, next) => {
 
   // OPEN DB CONNECTION
   var connection
-  createConnection({
-    host: process.env.DB_HOST, user: process.env.DB_USER, password: process.env.DB_PASS, database: process.env.DB_NAME 
-  }).then(conn => {
+  createConnection(mysqlConnection).then(conn => {
     // QUERY
     connection = conn
     var query = buildQuery.delete(table, {id: id})

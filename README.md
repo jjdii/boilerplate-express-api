@@ -39,6 +39,6 @@ $ npm start
 ```
 
 ## Using the API
-Import the Postman collection ([boilerplate-express-api/docs/pm.json](https://github.com/jjdii/boilerplate-express-api/blob/master/docs/pm.json)) into Postman to receive a set of test endpoints using the `resources` database table, if left unchanged. 
+Import the Postman collection ([boilerplate-express-api/docs/pm.json](https://github.com/jjdii/boilerplate-express-api/blob/master/docs/pm.json)) into Postman to receive a set of test endpoints using the `example` database table, if left unchanged. 
 
-There's a matching SQL script ([boilerplate-express-api/docs/db.sql](https://github.com/jjdii/boilerplate-express-api/blob/master/docs/db.sql)) that can be used to create the `resources` table, if you wish to use it for testing.
+There's a matching SQL script ([boilerplate-express-api/docs/db.sql](https://github.com/jjdii/boilerplate-express-api/blob/master/docs/db.sql)) that can be used to create the `example` table, if you wish to use it for testing.
